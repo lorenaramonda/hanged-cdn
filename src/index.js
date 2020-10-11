@@ -1,6 +1,11 @@
 /*global Vue*/
 
-var app = '';
+var app = new Vue({
+  data: {
+    coins: '0 monete'
+  }
+}).$mount('#app');
+
 
 // this console log it's for debugging, it will be removed later on
 console.log(app);
