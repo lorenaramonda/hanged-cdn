@@ -2,7 +2,8 @@
 
 var app = new Vue({
   data: {
-    coins: '0 monete'
+    coins: '0 monete',
+    attempsMessage: 'Indovina la parola entro <strong>10 tentativi</strong>'
   }
 }).$mount('#app');
 
