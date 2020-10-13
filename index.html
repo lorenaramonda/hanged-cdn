@@ -24,7 +24,11 @@
 				</div>
 				<div class="words">
 					<p>La parola da indovinare è:</p>
-					<!-- array of letters -->
+					<div class="word2discover">
+						<span v-for="letter in word2discover" :key="letter" class="letter">
+							<span>{{ letter }}</span>
+						</span>
+					</div>
 					<form>
 						<!-- input solution -->
 						<!-- button solution -->
