@@ -22,10 +22,10 @@
 						Hai accumulato <img src="./src/assets/money.png" width="16" class="coin" /> <strong>{{ coins }}</strong>
 					</div>
 				</div>
-				<div class="words">
+				<div v-if="word2discover" class="words">
 					<p>La parola da indovinare è:</p>
 					<div class="word2discover">
-						<span v-for="letter in word2discover" :key="letter" class="letter">
+						<span v-for="(letter, i) in word2discover" :key="i" class="letter">
 							<span>{{ letter }}</span>
 						</span>
 					</div>
