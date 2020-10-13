@@ -49,7 +49,7 @@
 								pattern="[^aeiouAEIOU]"
 								required
 							/>
-							<!-- button letter check -->
+							<button class="action action__confirm" @click.prevent="confirm">Controlla</button>
 						</form>
 						<div class="tip tip__attemps">
 							<p v-html="attempsMessage"></p>
