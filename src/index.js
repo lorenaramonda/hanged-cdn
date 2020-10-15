@@ -9,6 +9,11 @@ var app = new Vue({
     goodLetters: [],
     badLetters: [],
   },
+  computed: {
+    badAttemps() {
+      return this.badLetters.length
+    }
+  },
   methods: {
     confirm() {
       const letter = this.letter2check.toLowerCase()
