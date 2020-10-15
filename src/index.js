@@ -3,20 +3,25 @@
 var app = new Vue({
   data: {
     coins: '0 monete',
-    attempsMessage: 'Indovina la parola entro <strong>10 tentativi</strong>',
     word2discover: 'meraviglioso',
     letter2check: '',
     goodLetters: [],
     badLetters: [],
-    gameover: false
+    gameover: false,
+    totalAttemps: 10,
+    usedAttemps: 0
   },
   computed: {
     badAttemps() {
       return this.badLetters.length
+    },
+    attempsMessage() {
+      return `Indovina la parola entro <strong>${this.totalAttemps - this.usedAttemps} tentativi</strong>`
     }
   },
   methods: {
     confirm() {
+      this.usedAttemps++
       const letter = this.letter2check.toLowerCase()
       if (this.word2discover.includes(letter)) {
         if (!this.goodLetters.includes(letter)) this.goodLetters.push(letter)
