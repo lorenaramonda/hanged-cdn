@@ -8,6 +8,7 @@ var app = new Vue({
     letter2check: '',
     goodLetters: [],
     badLetters: [],
+    gameover: false
   },
   computed: {
     badAttemps() {
@@ -22,6 +23,7 @@ var app = new Vue({
       } else {
         this.badLetters.push(letter)
       }
+      if (this.badLetters.length >= 6) this.gameover = true
       this.letter2check = ''
     }
   },

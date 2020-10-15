@@ -53,7 +53,12 @@
 						<!-- button solution -->
 						<p class="tip">Sblocca i campi sopra e dai la soluzione adesso! Se sbagli, il gioco finisce.</p>
 					</form>
-					<!-- message game over -->
+					<template v-if="gameover">
+						<p><strong>Oh no! HAI PERSO!</strong></p>
+						<p>
+							La parola era <strong>{{ word2discover }}</strong>
+						</p>
+					</template>
 				</div>
 				<div class="dashboard">
 					<div class="consonants">
