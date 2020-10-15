@@ -84,3 +84,86 @@ Soluzione da adottare a discrezione
 
 💪 **Codice di partenza**: [functionality-1/start](https://github.com/lorenaramonda/hanged-cdn/tree/functionality-1/start)  
 🤫 **Soluzione**: functionality-1/finish
+
+## Senza mani 🙌 (esercizi PRO)
+
+> Aggiungere un game over dopo 6 tentativi errati rappresentandone i tentativi mostrando l'immagine dell'impiccato nonché dopo un massimo di tentativi totali possibile e bloccare l'interazione col gioco
+
+### Gestire il game over per tentativi errati
+
+Sostituire l'svg
+
+```
+<div class="hanged">
+  <svg width="290px" height="500px" viewBox="0 0 290 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="hanged-man">
+      <g id="man">
+        <circle id="head" stroke="#151515" fill="none" stroke-width="3" cx="222.5" cy="117.5" r="33.5"></circle>
+        <rect id="body" fill="#151515" transform="translate(222.500000, 226.500000) scale(-1, 1) translate(-222.500000, -226.500000) "x="221" y="151" width="3" height="151"></rect>
+        <polygon id="right-arm" fill="#151515" points="222.549038 151.24241 161.049038 225.057466 158.450962 224.018023 219.950962 150.202967"></polygon>
+        <polygon id="left-arm" fill="#151515" points="286.799038 223.971604 284.200962 225.011046 222.200962 150.595867 224.799038 149.556425"></polygon>
+        <rect id="right-leg" fill="#151515" transform="translate(192.500000, 351.500000) scale(-1, 1) rotate(-30.000000) translate(-192.500000, -351.500000) " x="191" y="292" width="3" height="119"></rect>
+        <rect id="left-leg" fill="#151515" transform="translate(252.500000, 351.500000) scale(-1, -1) rotate(-30.000000) translate(-252.500000, -351.500000) " x="251" y="292" width="3" height="119"></rect>
+      </g>
+      <g id="pole">
+        <rect id="Rectangle" fill="#151515" transform="translate(224.500000, 42.000000) scale(-1, 1) translate(-224.500000, -42.000000) " x="223" y="0" width="3" height="84"></rect>
+        <rect id="Rectangle" fill="#151515" transform="translate(113.500000, 1.500000) scale(-1, 1) rotate(-270.000000) translate(-113.500000, -1.500000) " x="112" y="-111"width="3" height="225"></rect>
+        <rect id="Rectangle" fill="#151515" transform="translate(1.500000, 250.000000) scale(-1, 1) translate(-1.500000, -250.000000) " x="0" y="0" width="3" height="500"></rect>
+      </g>
+    </g>
+  </svg>
+</div>
+```
+
+al commento `<!-- svg -->`e mostrare le forme che compongono la persona stilizzata, identificabili dal loro ID (sono già in ordine di apparizione), in sequenza man mano che i tentativi fallimentari aumentano
+
+È ora il momento di interrompere il gioco in caso di game over, per iniziare in caso di 6 tentativi errati
+
+Creare un data di tipo booleano in cui salvare lo stato del gioco con un valore iniziale di `false`
+
+**Nome della proprietà da usare**: `gameover`
+
+**Challenge** 😏 Valorizzare la proprietà `gameover` a `true` al momento opportuno
+
+Sostituire il seguente messaggio
+
+```
+<p><strong>Oh no! HAI PERSO!</strong></p>
+<p>
+  La parola era <strong>{{ word2discover }}</strong>
+</p>
+```
+
+al commento `<!-- message game over -->`e renderizzare entrambe le frasi sotto un'unica condizione di `gameover` a `true`
+
+### Limitare il tempo del gioco ad un numero massimo di tentativi
+
+Aggiungere la gestione di un massimo di 10 tentativi totali (sia che lettera scommessa sia stata indovinata che no)  
+ℹ️ _Non è ancora un gameover: verrà data più tardi la possibilità di provare ad indovinare l'intera parola come ultima possibilità di vittoria_
+
+**Nomi delle proprietà da usare**: `totalAttemps` e `usedAttemps`
+
+Nel precedente esercizio è stata aggiunta la frase _Indovina la parola entro 10 tentativi_ che occorre ora rendere dinamica per mostrare il numero totale di tentativi configurato  
+Non deve essere un numero statico, ma un numero che decrementa ogni volta che viene sfruttato un tentativo in modo da notificare l'utente quanto gli rimane per riuscire a completare il gioco con successo
+
+**Challenge** 😏 Una volta finiti i tentativi disponibili oppure a gameover per 6 tentativi errati **impedire la possibilità di provare ad indovinare ancora le lettere**
+
+### Re-inizializzare il gioco
+
+Aggiungere un metodo di reset che riporti il gioco al suo stato iniziale
+
+**Nome del metodo da usare**: `init`
+
+Inserire il seguente markup
+
+```
+<button class="button button__start">Ricomincia</button>
+```
+
+in sostituzione al commento `<!-- button start -->` e scatenare sul seguente bottone il reset del gioco
+
+-----------
+
+💪 **Codice di partenza**: [functionality-2/start](https://github.com/lorenaramonda/hanged-cdn/tree/functionality-2/start)  
+🤫 **Soluzione**: functionality-2/finish
