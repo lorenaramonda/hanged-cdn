@@ -22,12 +22,12 @@ Utilizzare per il ciclo questo markup
 </div>
 ```
 
-sostituendolo al commento `<!-- array of letters -->`
+sostituendolo al commento `<!-- array of letters -->`
 
 ### Condizione v-if
 
 Accertarsi che il div `.words` aggiunto sia visibile solo se presente una parola  
-Per testare resettarne il valore dalla console `app.word2discover = ''`
+Per testare resettarne il valore dalla console `app.word2discover = ''`
 
 ### Input binding
 
@@ -46,7 +46,7 @@ Utilizzare questo markup
 />
 ```
 
-sostituendolo al commento `<!-- input letter -->`
+sostituendolo al commento `<!-- input letter -->`
 
 **Nome della proprietà da usare**: `letter2check`
 
@@ -69,7 +69,7 @@ Aggiungere il bottone
 <button class="action action__confirm">Controlla</button>
 ```
 
-al posto del commento `<!-- button letter check -->`e scatenare al click su di esso il metodo appena creato  
+al posto del commento `<!-- button letter check -->` e scatenare al click su di esso il metodo appena creato  
 **Attenzione** ⚠️ Trovandoci all'interno di un form questo bottone si comporta da submit per cui la pagina si refresherà impedendo al metodo di funzionare correttamente.  
 Aggiungere, pertanto, all'evento l'[event modifier appropriato](https://vuejs.org/v2/guide/events.html#Event-Modifiers) che prevenga questo comportamento
 
@@ -115,7 +115,7 @@ al commento `<!-- svg -->`e mostrare le forme che compongono la persona stilizz
 
 È ora il momento di interrompere il gioco in caso di game over, per iniziare in caso di 6 tentativi errati
 
-Creare un data di tipo booleano in cui salvare lo stato del gioco con un valore iniziale di `false`
+Creare un data di tipo booleano in cui salvare lo stato del gioco con un valore iniziale di `false`
 
 **Nome della proprietà da usare**: `gameover`
 
