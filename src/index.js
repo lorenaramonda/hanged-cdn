@@ -20,6 +20,12 @@ var app = new Vue({
     }
   },
   methods: {
+    init() {
+      this.goodLetters = []
+      this.badLetters = []
+      this.usedAttemps = 0
+      this.gameover = false
+    },
     confirm() {
       this.usedAttemps++
       const letter = this.letter2check.toLowerCase()
