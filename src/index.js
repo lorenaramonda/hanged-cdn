@@ -59,7 +59,7 @@ var app = new Vue({
       template: `
         <div class="modal">
           <div class="modal__inner">
-            <button class="modal__close">X</button>
+            <button @click="$emit('close-modal')" class="modal__close">X</button>
             <slot />
           </div>
         </div> 
@@ -76,7 +76,8 @@ var app = new Vue({
     gameover: false,
     totalAttemps: 10,
     usedAttemps: 0,
-    customText: ''
+    customText: '',
+    settingsOpen: false
   },
   computed: {
     badAttemps() {
