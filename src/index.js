@@ -113,7 +113,13 @@ var app = new Vue({
       this.letter2check = ''
     },
     getWords() {
-      this.words = this.customText.toLowerCase().replace(/[^a-zA-Z]/gm, ' ').split(' ').filter(word => word.length > 7)
+      this.words = this.customText
+        .toLowerCase()
+        .replace(/[^a-zA-Z]/gm, ' ')
+        .split(' ')
+        .filter(word => word.length > 7)
+      this.settingsOpen = false
+      this.init()
     }
   },
 }).$mount('#app');
