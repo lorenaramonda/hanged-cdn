@@ -1,0 +1,317 @@
+
+// generic
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1.4em;
+  color: #292828;
+}
+p {
+  margin: 0;
+}
+strong {
+  font-weight: bold;
+}
+img {
+  vertical-align: bottom;
+  &.coin {
+    display: inline-block;
+    margin-right: 0.3rem;
+  }
+}
+
+
+
+.game {
+  padding: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .game {
+    display: flex;
+    max-width: 1024px;
+    margin: 60px auto;
+    &__left {
+      display: flex;
+      flex-direction: column;
+    }
+    &__right {
+      margin-left: 2em;
+      flex: 1 0 auto;
+      flex-direction: column;
+    }
+  }
+}
+.button {
+  border: none;
+  background: none;
+  height: 4rem;
+  padding: 0;
+  min-width: 230px;
+  border-radius: 8px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 1rem auto;
+  cursor: pointer;
+  &__start {
+    width: 100%;
+    background: #f4c34b url('assets/dices.png') no-repeat center right 10px;
+  }
+  &__end {
+    background-color: #b8e986;
+  }
+}
+.action {
+  border: none;
+  background: none;
+  padding: 0;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  font-size: 0;
+  &__settings {
+    background: url('assets/settings.png') no-repeat center;
+    background-size: cover;
+  }
+  &__confirm {
+    vertical-align: middle;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -2rem;
+    background: #75befe url('assets/chevron.png') no-repeat center;
+    &:disabled {
+      background-color: #d6d6d6;
+      cursor: default;
+    }
+  }
+}
+.settings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.words {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.dashboard {
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+.tip {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #5a5a5a;
+  &__attemps {
+    margin-top: 0.5em;
+  }
+}
+
+.consonants {
+  p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.vocals {
+  margin: 3rem 0 0;
+  ul {
+    margin: 1rem 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &--allowed {
+    .vocal {
+      cursor: pointer;
+      background-color: #d0e9ff;
+      color: #292828;
+      &:hover {
+        background-color: #75befe;
+      }
+    }
+  }
+}
+.vocal {
+  background-color: #d6d6d6;
+  color: #a7a7a7;
+  cursor: default;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: bold;
+  + .vocal {
+    margin-left: 1.5rem;
+  }
+}
+
+.letter,
+.input {
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+  background-color: white;
+  text-transform: uppercase;
+}
+.input {
+  &__letter {
+    vertical-align: middle;
+    border: dashed 1px #979797;
+    background-color: #ffffff;
+    padding: 0 2.5rem 0 2rem;
+    width: 250px;
+    text-align: center;
+    &::placeholder {
+      color: #b4b3b3;
+      text-transform: none;
+    }
+    &:focus {
+      border: solid 2px #75befe;
+      border-radius: 4px;
+      outline: none;
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &__word {
+    border: dashed 1px #979797;
+    background-color: #ffffff;
+    padding: 0 2.5rem 0 2rem;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    &::placeholder {
+      color: #b4b3b3;
+      text-transform: none;
+    }
+    &:focus {
+      border: solid 2px #b8e986;
+      border-radius: 4px;
+      outline: none;
+    }
+  }
+}
+
+.letter::placeholder {
+  text-transform: none;
+}
+
+.word2discover {
+  margin: 10px auto;
+  display: table;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.word2discover .letter {
+  border-bottom: solid 3px #979797;
+  display: flex;
+  justify-content: center;
+}
+
+.word2discover .letter span {
+  align-self: center;
+}
+.word2discover .letter + .letter {
+  margin-left: 7px;
+}
+
+.sentence {
+  label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  textarea {
+    width: 100%;
+    height: 200px;
+    border: dashed 1px #979797;
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .hanged {
+    margin: 0 auto;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    display: block;
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+  }
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  &__close {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #75befe;
+    color: white;
+    border: 0;
+    cursor: pointer;
+  }
+  &__inner {
+    position: relative;
+    align-self: center;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 400px;
+    box-shadow: 0 0 13px 2px rgba(0,0,0,0.2);
+    padding: 3rem;
+  }
+}

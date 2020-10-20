@@ -1,2 +1,3 @@
-# hanged-cdn
-Created with CodeSandbox
+# Hanged Game
+
+Base template for CodeSandbox
