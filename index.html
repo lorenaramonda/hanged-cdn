@@ -69,6 +69,13 @@
 				</div>
 			</div>
 		</div>
+		<base-modal v-if="settingsOpen" @close-modal="settingsOpen = false">
+			<form class="sentence" @submit.prevent="getWords">
+				<label for="sentence">Configura il gioco</label>
+				<textarea v-model="customText" id="sentence" placeholder="Copia qui testo da cui estrarre parole"></textarea>
+				<button class="button button__start">Estrapola parole</button>
+			</form>
+		</base-modal>
 	</div>
 	
 	<script src="src/index.js"></script>

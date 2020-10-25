@@ -54,6 +54,17 @@ Vue.component('TheWord', {
 var app = new Vue({
   components: {
     HangedMan,
+    // alternative way to include component, just for teaching porpose. Prefere the separate-object way
+    'base-modal': {
+      template: `
+        <div class="modal">
+          <div class="modal__inner">
+            <button class="modal__close">X</button>
+            <slot />
+          </div>
+        </div> 
+      `
+    }
   },
   data: {
     coins: '0 monete',
@@ -64,7 +75,8 @@ var app = new Vue({
     badLetters: [],
     gameover: false,
     totalAttemps: 10,
-    usedAttemps: 0
+    usedAttemps: 0,
+    customText: ''
   },
   computed: {
     badAttemps() {
@@ -98,6 +110,9 @@ var app = new Vue({
       }
       if (this.badLetters.length >= 6) this.gameover = true
       this.letter2check = ''
+    },
+    getWords() {
+      this.words = this.customText.toLowerCase().replace(/[^a-zA-Z]/gm, ' ').split(' ').filter(word => word.length > 7)
     }
   },
 }).$mount('#app');
